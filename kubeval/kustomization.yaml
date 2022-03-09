@@ -1,0 +1,16 @@
+resources:
+  - resources.yaml
+
+transformers:
+  - |-
+    apiVersion: v1
+    kind: ConfigMap
+    metadata:
+      name: my-config
+      annotations:
+        config.kubernetes.io/function: |
+          container:
+            image: gcr.io/kpt-fn/kubeval:v0.2
+    data:
+      skip_kinds: MyCustom
+      strict: "true"
