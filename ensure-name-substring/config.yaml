@@ -1,0 +1,10 @@
+apiVersion: fn.kpt.dev/v1alpha1
+kind: EnsureNameSubstring
+metadata:
+  name: my-fn-config
+  annotations:
+    config.kubernetes.io/function: |
+      container:
+        image: gcr.io/kpt-fn/ensure-name-substring:v0.1.1
+substring: dev-
+editMode: prepend

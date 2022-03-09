@@ -1,0 +1,11 @@
+apiVersion: fn.kpt.dev/v1alpha1
+kind: SetLabelConfig
+metadata:
+  name: my-config
+  annotations:
+    config.kubernetes.io/function: |
+      container:
+        image: gcr.io/kpt-fn/set-labels:v0.1.4
+labels:
+  color: orange
+  fruit: apple
